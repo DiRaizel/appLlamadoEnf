@@ -1,0 +1,68 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="usuario" class="page">
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="navbar-inner barraNav">
+        <div class="left"><a href="#" class="link back"><i class="fas fa-chevron-circle-left"></i></a></div>
+        <div class="title">Mi Primera App</div>
+    </div>
+  </div>
+
+  <!-- Bottom Toolbar -->
+  <div class="toolbar toolbar-bottom">
+    <div class="toolbar-inner">
+      <!-- Toolbar links -->
+      <a href="/home/" class="link"><i class="fas fa-home icono"></i></a>
+      <a href="/galeria/" class="link"><i class="far fa-images icono"></i></a>
+      <a href="" class="link"><i class="fas fa-user-tie icono"></i></a>
+    </div>
+  </div>
+
+  <!-- Scrollable page content -->
+  <div class="page-content">
+    <div class="block">
+
+      <div class="divTU"><h1>Agregar Nuevo Usuario</h1></div>
+
+      <form class="list formUsuario" id="formUsuario" name="formUsuario" method="POST" action="javascript:insertarUsuario()">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Nombre</div>
+                <div class="item-input-wrap">
+                  <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Correo</div>
+                <div class="item-input-wrap">
+                  <input type="email" id="correo" name="correo" placeholder="Correo" required>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Edad</div>
+                <div class="item-input-wrap">
+                  <input type="text" id="edad" name="edad" placeholder="Edad" required>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button name="" type="submit" class="button color-green button-fill button-round">Guardar</button>
+          </li>
+        </ul>
+      </form>
+         <a onclick="cargarUsuarios();" href="/cargarUsuarios/" class="button button-raised button-round">Consultar Usuarios</a>
+    </div>
+  </div>
+</div>
