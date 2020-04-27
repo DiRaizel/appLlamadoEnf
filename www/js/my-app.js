@@ -87,6 +87,7 @@ function llamado() {
         qos: 0,
         retain: false,
         success: function (s) {
+            //
             alert('Solicitud enviada!');
             //
             $$('#btnLlamado').addClass('disabled');
