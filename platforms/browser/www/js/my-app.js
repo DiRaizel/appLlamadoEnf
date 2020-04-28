@@ -81,22 +81,33 @@ function editarDireccion() {
 //
 function llamado() {
     //
-    cordova.plugins.CordovaMqTTPlugin.publish({
-        topic: 'appLlamadoEnf/prueba',
-        payload: localStorage.dir,
-        qos: 0,
-        retain: false,
-        success: function (s) {
-            alert('Solicitud enviada!');
+    if (localStorage.dir !== '' && localStorage.dir !== undefined) {
+        //
+        cordova.plugins.CordovaMqTTPlugin.publish({
+            topic: 'appLlamadoEnf/prueba',
+            payload: localStorage.dir,
+            qos: 0,
+            retain: false,
+            success: function (s) {
+                //
+                alert('Solicitud enviada!');
+                //
+                $$('#btnLlamado').addClass('disabled');
+                $$('#btnLlamado').addClass('color-gray');
+                tiempo();
+            },
+            error: function (e) {
+                //alert("err!! something is wrong. check the console")
+            }
+        });
+    } else {
+        //
+        app.dialog.prompt('', 'Dirección', function (dir) {
             //
-            $$('#btnLlamado').addClass('disabled');
-            $$('#btnLlamado').addClass('color-gray');
-            tiempo();
-        },
-        error: function (e) {
-            //alert("err!! something is wrong. check the console")
-        }
-    });
+            localStorage.dir = dir;
+            $$('#direccion').html(dir);
+        });
+    }
 }
 
 //
